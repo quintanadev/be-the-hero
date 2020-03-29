@@ -9,6 +9,7 @@ module.exports = {
             .join('ongs as o', 'o.id', '=', 'i.ong_id')
             .limit(5)
             .offset((page - 1) * 5)
+            .orderBy('i.id')
             .select([
                 'i.*',
                 'o.name',
